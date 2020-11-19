@@ -63,3 +63,21 @@ class Task2 {
             echo "<br/>Радиус вписанной окружности = " . self::getRadius($a, $b, $c);
     }
 }
+
+
+/**
+ * Дано натуральное число n. Переставить его цифры так, чтобы образовалось максимальное число, записанное теми же цифрами.
+ */
+class Task3 {
+    public function run() {
+        $n = $_REQUEST["val"];
+        echo self::reorganize($n);
+    }
+
+    private function reorganize($n) {
+        $arr = str_split($n);
+        // обратная сортировка
+        arsort($arr);
+        return implode("", $arr);
+    }
+}

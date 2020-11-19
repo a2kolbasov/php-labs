@@ -38,9 +38,9 @@
             <input type="submit" value="Переставить"/>
         </form>
     </div>
-    <div>
+    <? if (isset($_REQUEST['task'])) { ?><div>
         <h2>Ответ:</h2>
         <? require("tasks.php"); ?>
-    </div>
+    </div><? } ?>
 </body>
 </html>

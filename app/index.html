@@ -7,6 +7,14 @@
     <title><?= $title ?></title>
 </head>
 <body>
-    <b><?= $title ?></b>
+    <h1><?= $title ?></h1>
+    <div id="task1">
+        <h2>Найти площадь полной поверхности и объем куба по известному ребру</h2>
+        <form action="tasks.php" method="GET"> <input type="hidden" name="task" value="1"/>
+            Длинна ребра:
+            <input type="number" step="0.01" name="val"/>
+            <input type="submit" value="Найти"/>
+        </form>
+    </div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!-- Copyright © 2020 Aleksandr Kolbasov -->
 
 <?php
-$title = "Test";
+$title = "ПР №1";
 include('index.html');

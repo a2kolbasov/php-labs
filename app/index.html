@@ -16,5 +16,17 @@
             <input type="submit" value="Найти"/>
         </form>
     </div>
+    <div id="task2">
+        <h2>
+            Даны три положительных числа. Проверить, могут ли они быть длинами сторон треугольника.
+            Если да, то вычислить радиус вписанной окружности.
+        </h2>
+        <form action="tasks.php" method="GET"> <input type="hidden" name="task" value="2"/>
+            <? foreach (array('a', 'b', 'c') as $numName) { echo "$numName:"; ?>
+                <input type="number" name="<?=$numName?>"/>
+            <? } ?>
+            <input type="submit" value="Проверить и вычислить"/>
+        </form>
+    </div>
 </body>
 </html>

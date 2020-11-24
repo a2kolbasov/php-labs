@@ -32,10 +32,10 @@ class Task7 {
     */
 
     public static function mkfile(string $fileName="kolbasov.a.a") {
-        return touch($fileName);
+        return "Статус создания: " . (touch($fileName) == 1 ? "создан" : "ошибка");
     }
 
     public static function rmfile(string $fileName="kolbasov.a.a") {
-        return unlink($fileName);
+        return "Статус удаления: " . (unlink($fileName) == 1 ? "удалён" : "ошибка");
     }
 }

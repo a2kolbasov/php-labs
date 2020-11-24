@@ -1,5 +1,6 @@
 <!-- Copyright © 2020 Aleksandr Kolbasov -->
 
+<? include("tasks.php") ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,5 +9,14 @@
 </head>
 <body>
     <h1><?= $title ?></h1>
+    <div>
+        <h2>Задание 6</h2>
+        <?{ $response = Task6::run() ?>
+        <h3>Файл:</h3>
+        <?=$response["text"]?>
+        <h3>Ответ:</h3>
+        <?=$response["word"]?>
+        <?}?>
+    </div>
 </body>
 </html>

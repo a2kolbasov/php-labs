@@ -23,3 +23,19 @@ class Task6 {
         return array("word" => $maxLengthWorld, "text" => $text);
     }
 }
+
+class Task7 {
+    /*
+    Реализовать с файлами действия в соответствии с вариантом группы функций:
+    (результаты выполнения представить в отчете, наименование фалов – ФИО_студента)
+    Создание и удаление файлов, Получение информации о файле.
+    */
+
+    public static function mkfile(string $fileName="kolbasov.a.a") {
+        return touch($fileName);
+    }
+
+    public static function rmfile(string $fileName="kolbasov.a.a") {
+        return unlink($fileName);
+    }
+}

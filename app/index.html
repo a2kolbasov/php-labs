@@ -3,20 +3,43 @@
 <? include("tasks.php") ?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title><?= $title ?></title>
 </head>
+
 <body>
     <h1><?= $title ?></h1>
     <div>
+        <? { ?>
         <h2>Задание 6</h2>
-        <?{ $response = Task6::run() ?>
+        <? $response = Task6::run() ?>
         <h3>Файл:</h3>
         <?=$response["text"]?>
         <h3>Ответ:</h3>
         <?=$response["word"]?>
-        <?}?>
+        <? } ?>
+    </div>
+    <div>
+        <? { ?>
+        <h2>Задание 7</h2>
+        <form method="POST">
+            <? foreach (array("mkfile", "rmfile", "info") as $act) { ?>
+            <input type="radio" name="act" value="<?=$act?>">
+            <label><?=$act?></label>
+            <br>
+            <? } ?>
+            <input type="submit" value="Отправить">
+        </form>
+        <div>
+            <? if (isset($_REQUEST["act"])) { ?>
+            Статус:
+            <?= Task7::{$_REQUEST["act"]}() ?>
+            <? } ?>
+        </div>
+        <? } ?>
     </div>
 </body>
+
 </html>

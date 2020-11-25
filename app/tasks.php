@@ -11,7 +11,7 @@ class Task6 {
         $words = array();
         $text = "";
         foreach ($file as $line) {
-            $words = array_merge($words, preg_split("/[\s,]+/", $line));
+            $words = array_merge($words, preg_split("/[\s,.!]+/", $line));
             $text = $text . $line . "<br>";
         }
 

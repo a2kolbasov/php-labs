@@ -26,7 +26,7 @@ class Task1 {
 
     public function run() {
         $val = $_REQUEST['val'];
-        echo "Площадь = " . self::s($val) . "<br/>Объём = " . self::v($val);
+        echo "Площадь = " . $this->s($val) . "<br/>Объём = " . $this->v($val);
     }
 }
 
@@ -45,9 +45,9 @@ class Task2 {
     }
 
     function getRadius($a, $b, $c) {
-        if (!self::isTriangle($a, $b, $c)) return null;
+        if (!$this->isTriangle($a, $b, $c)) return null;
 
-        $p = self::p($a, $b, $c);
+        $p = $this->p($a, $b, $c);
         return sqrt($p * ($p - $a) * ($p - $b) * ($p - $c));
     }
 
@@ -57,10 +57,10 @@ class Task2 {
         $b = (int) $_REQUEST['b'];
         $c = (int) $_REQUEST['c'];
 
-        $isTriangle = self::isTriangle($a, $b, $c);
+        $isTriangle = $this->isTriangle($a, $b, $c);
         echo "Треугольник? - " . ($isTriangle ? "Да" : "Нет");
         if ($isTriangle)
-            echo "<br/>Радиус вписанной окружности = " . self::getRadius($a, $b, $c);
+            echo "<br/>Радиус вписанной окружности = " . $this->getRadius($a, $b, $c);
     }
 }
 
@@ -71,7 +71,7 @@ class Task2 {
 class Task3 {
     public function run() {
         $n = $_REQUEST["val"];
-        echo self::reorganize($n);
+        echo $this->reorganize($n);
     }
 
     private function reorganize($n) {

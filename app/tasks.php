@@ -38,4 +38,21 @@ class Task7 {
     public static function rmfile(string $fileName="kolbasov.a.a") {
         return "Статус удаления: " . (unlink($fileName) == 1 ? "удалён" : "ошибка");
     }
+
+    public static function info(string $fileName="kolbasov.a.a") {
+        if (!file_exists($fileName)) return "Файл не найден";
+
+        $type = filetype($fileName);
+        $size = filesize($fileName);
+        $timeStamp = "d.m.Y H:i:s";
+        $createTime = date($timeStamp, filectime($fileName));
+        $editTime = date($timeStamp, filemtime($fileName));
+
+        return "
+        <br>Тип: $type
+        <br>Размер: $size B
+        <br>Время создания: $createTime
+        <br> Время модификации: $editTime
+        ";
+    }
 }

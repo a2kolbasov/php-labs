@@ -1,5 +1,0 @@
-<!-- Copyright © 2020 Aleksandr Kolbasov -->
-
-<?php
-$title = "ПР №4, вариант №5";
-include('index.html');

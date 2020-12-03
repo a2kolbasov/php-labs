@@ -18,9 +18,9 @@ function multiply($a, $b) {
     <input type="hidden" name="task" value="6">
     <input type="submit" value="Отправить">
 </form>
-<? if ($_REQUEST["task"] == 6) { ?>
+<?php if ($_REQUEST["task"] == 6) { ?>
 <div>
     Ответ:
     <?= multiply($_REQUEST["a"], $_REQUEST["b"]) ?>
 </div>
-<? } ?>
+<?php } ?>

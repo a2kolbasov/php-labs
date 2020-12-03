@@ -13,12 +13,12 @@ $title = "ПР №3, вариант №5";
 
 <body>
     <h1><?= $title ?></h1>
-    <? for ($taskNum = 5; $taskNum <= 7; $taskNum++) { ?>
+    <?php for ($taskNum = 5; $taskNum <= 7; $taskNum++) { ?>
     <h2>Задание <?=$taskNum?></h2>
     <div>
-        <? include("task" . $taskNum . ".php") ?>
+        <?php include("task" . $taskNum . ".php") ?>
     </div>
-    <? } ?>
+    <?php } ?>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 
 <?php
 $title = "ПР №1";
->
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -27,9 +27,9 @@ $title = "ПР №1";
             Если да, то вычислить радиус вписанной окружности.
         </h2>
         <form action="" method="GET"> <input type="hidden" name="task" value="2" />
-            <? foreach (array('a', 'b', 'c') as $numName) { echo "$numName:"; ?>
+            <?php foreach (array('a', 'b', 'c') as $numName) { echo "$numName:"; ?>
             <input type="number" name="<?=$numName?>" />
-            <? } ?>
+            <?php } ?>
             <input type="submit" value="Проверить и вычислить" />
         </form>
     </div>
@@ -44,12 +44,12 @@ $title = "ПР №1";
             <input type="submit" value="Переставить" />
         </form>
     </div>
-    <? if (isset($_REQUEST['task'])) { ?>
+    <?php if (isset($_REQUEST['task'])) { ?>
     <div>
         <h2>Ответ:</h2>
-        <? require("tasks.php"); ?>
+        <?php require("tasks.php"); ?>
     </div>
-    <? } ?>
+    <?php } ?>
 </body>
 
 </html>

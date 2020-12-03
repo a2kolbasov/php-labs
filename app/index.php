@@ -15,33 +15,33 @@ include("tasks.php");
 <body>
     <h1><?= $title ?></h1>
     <div>
-        <? { ?>
+        <?php { ?>
         <h2>Задание 6</h2>
-        <? $response = Task6::run() ?>
+        <?php $response = Task6::run() ?>
         <h3>Файл:</h3>
         <?=$response["text"]?>
         <h3>Ответ:</h3>
         <?=$response["word"]?>
-        <? } ?>
+        <?php } ?>
     </div>
     <div>
-        <? { ?>
+        <?php { ?>
         <h2>Задание 7</h2>
         <form method="POST">
-            <? foreach (array("mkfile", "rmfile", "info") as $act) { ?>
+            <?php foreach (array("mkfile", "rmfile", "info") as $act) { ?>
             <input type="radio" name="act" value="<?=$act?>">
             <label><?=$act?></label>
             <br>
-            <? } ?>
+            <?php } ?>
             <input type="submit" value="Отправить">
         </form>
         <div>
-            <? if (isset($_REQUEST["act"])) { ?>
+            <?php if (isset($_REQUEST["act"])) { ?>
             <b>Ответ:</b>
             <?= Task7::{$_REQUEST["act"]}() ?>
-            <? } ?>
+            <?php } ?>
         </div>
-        <? } ?>
+        <?php } ?>
     </div>
 </body>
 

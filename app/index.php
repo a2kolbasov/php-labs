@@ -36,7 +36,7 @@ $products = array(
     <a href="setUserName.php" style="position: absolute; top: 5px; right: 5px">Изменить имя</a>
     <h1><?= $title ?></h1>
     <div>
-        <? $userName = $_SESSION["userName"] ?>
+        <?php $userName = $_SESSION["userName"] ?>
         <?= "Здравствуйте" . ($userName != "" ? ", $userName!" : "!") ?>
     </div>
     <div>
@@ -44,10 +44,10 @@ $products = array(
         <form method="get">
             <input type="hidden" name="sended">
             <div id="cart">
-                <? foreach ($products as $product) { ?>
+                <?php foreach ($products as $product) { ?>
                     <input type="checkbox" name="<?= $product->getId() ?>">
                     <label><?= $product->getName() ?></label><br>
-                <? } ?>
+                <?php } ?>
             </div>
             Кабинет № <input type="text" name="office" required><br>
             Почта: <input type="email" name="email" required><br>
@@ -55,18 +55,18 @@ $products = array(
         </form>
     </div>
     <div>
-        <? if (isset($_REQUEST["sended"])) { ?>
+        <?php if (isset($_REQUEST["sended"])) { ?>
             Вы заказали:
             <ol>
-            <? foreach ($products as $product) {
+            <?php foreach ($products as $product) {
                 if (isset($_REQUEST[$product->getId()])) { ?>
                     <li><?= $product->getName() ?></li>
-                <? }
+                <?php }
             } ?>
             </ol>
             После сборки заказа, его принесут в кабинет №<?= $_REQUEST["office"] ?>.<br>
             Копию заказа отправят на e-mail: <?=$_REQUEST["email"]?>
-        <? } ?>
+        <?php } ?>
     </div>
 </body>
 </html>

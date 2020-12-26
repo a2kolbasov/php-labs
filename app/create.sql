@@ -14,7 +14,7 @@ CREATE TABLE app.books (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` TEXT NOT NULL ,
     `year` INT NOT NULL ,
-    `publisher` INT NOT NULL ,
+    `publisher` INT ,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
 CREATE TABLE app.publishers (
@@ -22,3 +22,7 @@ CREATE TABLE app.publishers (
     `name` TEXT NOT NULL ,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+
+
+INSERT INTO books (name, year, publisher) VALUES ('something about php', 2012, 2);
+INSERT INTO books (name, year, publisher) VALUES ('something about js', 2015, 7);

@@ -10,3 +10,15 @@ CREATE TABLE app.users (
     `pw_hash` VARCHAR(5) NOT NULL ,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;
+CREATE TABLE app.books (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` TEXT NOT NULL ,
+    `year` INT NOT NULL ,
+    `publisher` INT NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+CREATE TABLE app.publishers (
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` TEXT NOT NULL ,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;

@@ -34,7 +34,7 @@ class Create_table {
             echo $sql . "<br>";
 
             $result = $connection->query($sql);
-            echo ($result == true ? "true" : "false") . "<br>";
+            // echo ($result == true ? "true" : "false") . "<br>";
         }
         // $connection->commit();
     }
@@ -53,6 +53,18 @@ class Create_table {
     }
 }
 
+$title = "ПР №5";
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title><?= $title ?></title>
+</head>
+<body>
+    <h1><?= $title ?></h1>
+<?php
+
 Create_table::add_rand_data(
     "users",
     [
@@ -64,3 +76,7 @@ Create_table::add_rand_data(
     ],
     2
 );
+
+?>
+</body>
+</html>

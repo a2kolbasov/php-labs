@@ -13,7 +13,7 @@ CREATE TABLE app.users (
 ) ENGINE = InnoDB;
 CREATE TABLE `app`.`auctions` (
     `id` INT NOT NULL AUTO_INCREMENT ,
-    `title` INT NOT NULL ,
+    `title` TEXT NOT NULL ,
     `isVisible` INT NOT NULL ,
     `startTime` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     `endTime` TIMESTAMP NULL DEFAULT NULL ,
@@ -23,6 +23,7 @@ CREATE TABLE `app`.`bets` (
     `id` INT NOT NULL AUTO_INCREMENT ,
     `auction` INT NOT NULL ,
     `time` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
-    `price` INT NOT NULL , `user` INT NOT NULL ,
+    `price` INT NOT NULL ,
+    `user` VARCHAR(20) NOT NULL ,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB;

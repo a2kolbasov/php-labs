@@ -3,14 +3,13 @@
 CREATE DATABASE app CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 -- USE app;
 CREATE TABLE app.users (
-    `id` INT NOT NULL AUTO_INCREMENT ,
     `login` VARCHAR(20) NOT NULL ,
     `password` VARCHAR(64) NOT NULL ,
-    `pw_hash` VARCHAR(5) NOT NULL ,
+    `pw_hash` VARCHAR(10) NOT NULL ,
     `name` VARCHAR(64) ,
     `email` VARCHAR(64),
     `priveleges` VARCHAR(10),
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`login`)
 ) ENGINE = InnoDB;
 CREATE TABLE `app`.`auctions` (
     `id` INT NOT NULL AUTO_INCREMENT ,

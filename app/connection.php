@@ -7,6 +7,7 @@ class Connection {
 
     public function __construct(string $host, string $user, string $password, string $database) {
         $this->connection = mysqli_connect($host, $user, $password, $database);
+        $this->connection->set_charset("utf8");
     }
 
     public static function connect() {

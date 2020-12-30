@@ -44,5 +44,5 @@ if (!isset($_SESSION['login'])) { ?>
     }
 } else {
     p("Вы уже вошли");
-    // go("/");
+    go("/");
 }

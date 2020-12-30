@@ -7,14 +7,14 @@ include "../html.php";
 include "../utils.php";
 
 if (!isset($_SESSION['login'])) { ?>
-<h1 style="text-align: center;">Регистрация</h1>
+<h1 style="text-align: center;">Войти</h1>
 <style type="text/css">
         input {
             width: 400px;
         }
         form {
             position: relative;
-            left: 40%;
+            left: 30%;
         }
     </style>
 <form method="get">

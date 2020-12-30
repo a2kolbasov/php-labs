@@ -27,7 +27,7 @@ if (!isset($_SESSION['login'])) { ?>
     if (isset($_REQUEST['send'])) {
         $login = $_REQUEST['login'];
         $password = $_REQUEST['password'];
-        $sql = "select password from users where login = '$login'";
+        $sql = "select password, priveleges from users where login = '$login'";
         $query = Connection::connect()->query($sql);
         $dbPassword = $query ? $query[0]['password'] : null;
         p($dbPassword);
@@ -37,6 +37,7 @@ if (!isset($_SESSION['login'])) { ?>
         else if (!password_verify($password, $dbPassword)) echo p("Неверный пароль");
         else {
             $_SESSION['login'] = $login;
+            $_SESSION['priveleges'] = $query[0]['priveleges'];
             p("Вы вошли");
             go(".");
         }

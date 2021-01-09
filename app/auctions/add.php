@@ -21,13 +21,20 @@ if ($_SESSION['priveleges'] !== 'admin') {
         }
 </style>
 
+<div>
 <form method="get">
-    <p><a href="./">Назад</a></p>
-    <input name="title" type="text" placeholder="Название" required="true" />
-    <br /><input name="endTime" type="date" placeholder="Время окончания" required="true" />
+    <table><tr>
+        <td>Название: </td>
+        <td><input name="title" type="text" placeholder="Название лота" required="true" /></td>
+    </tr><tr>
+        <td>Дата окончания: </td>
+        <td><input name="endTime" type="date" placeholder="Время окончания" required="true" /></td>
+    </tr></table>
     <input name="send" type="hidden" value="true"/>
-    <br /><input type="submit" />
+    <input type="submit" />
+    <br /><button onclick="history.back()">Назад</button>
 </form>
+</div>
 <?php
     if (isset($_REQUEST['send'])) {
         $title = $_REQUEST['title'];

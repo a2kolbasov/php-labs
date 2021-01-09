@@ -18,7 +18,7 @@ if (!isset($_SESSION['login'])) { ?>
         }
     </style>
 <form method="get">
-    <input name="login" type="text" placeholder="Логин" required="true" />
+    <input name="login" type="text" placeholder="Логин" required="true" value="<?= $_COOKIE['last_login'] ?>" />
     <br /><input name="password" type="password" placeholder="Пароль" required="true" />
     <input name="send" type="hidden" value="true"/>
     <br /><input type="submit" />
@@ -38,6 +38,7 @@ if (!isset($_SESSION['login'])) { ?>
         else {
             $_SESSION['login'] = $login;
             $_SESSION['priveleges'] = $query[0]['priveleges'];
+            setcookie("last_login", $login, time() + 60*60*24*30 /* 30 дней */);
             p("Вы вошли");
             go(".");
         }

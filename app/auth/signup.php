@@ -7,7 +7,7 @@ session_start();
 include "../html.php";
 
 if (isset($_SESSION['login'])) {
-    echo "Разлогиньтесь";
+    p("Разлогиньтесь");
     // go("/");
 } else {
 ?>

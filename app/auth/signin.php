@@ -36,9 +36,9 @@ if (!isset($_SESSION['login'])) { ?>
         p($password);
         p(password_verify($password, $dbPassword) ? "t" : "f");
         if (!$query) {
-            echo p("Неверный логин");
+            p("Неверный логин");
         } else if (!password_verify($password, $dbPassword)) {
-            echo p("Неверный пароль");
+            p("Неверный пароль");
         } else {
             $_SESSION['login'] = $login;
             $_SESSION['priveleges'] = $query[0]['priveleges'];

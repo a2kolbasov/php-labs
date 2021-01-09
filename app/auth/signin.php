@@ -17,12 +17,14 @@ if (!isset($_SESSION['login'])) { ?>
             left: 30%;
         }
     </style>
+<div>
 <form method="get">
     <input name="login" type="text" placeholder="Логин" required="true" value="<?= $_COOKIE['last_login'] ?>" />
     <br /><input name="password" type="password" placeholder="Пароль" required="true" />
     <input name="send" type="hidden" value="true"/>
     <br /><input type="submit" />
 </form>
+</div>
 <?php
     if (isset($_REQUEST['send'])) {
         $login = $_REQUEST['login'];
@@ -33,14 +35,16 @@ if (!isset($_SESSION['login'])) { ?>
         p($dbPassword);
         p($password);
         p(password_verify($password, $dbPassword) ? "t" : "f");
-        if (!$query) echo p("Неверный логин");
-        else if (!password_verify($password, $dbPassword)) echo p("Неверный пароль");
-        else {
+        if (!$query) {
+            echo p("Неверный логин");
+        } else if (!password_verify($password, $dbPassword)) {
+            echo p("Неверный пароль");
+        } else {
             $_SESSION['login'] = $login;
             $_SESSION['priveleges'] = $query[0]['priveleges'];
             setcookie("last_login", $login, time() + 60*60*24*30 /* 30 дней */);
             p("Вы вошли");
-            go(".");
+            go("/");
         }
     }
 } else {

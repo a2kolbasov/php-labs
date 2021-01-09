@@ -20,8 +20,8 @@ if (!isset($title)) $title = "Аукцион";
     <div class="header">
         <a href="/">На главную</a>
         <a href="/auctions">Аукционы</a>
-        <a href="/signin">Войти</a>
-        <a href="/signup">Регистрация</a>
-        <a href="/signout">Выйти</a>
+        <a href="/auth/signin.php">Войти</a>
+        <a href="/auth/signup.php">Регистрация</a>
+        <a href="/auth/signout.php">Выйти</a>
     </div>
     <p><br/></p>

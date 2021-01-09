@@ -21,6 +21,7 @@ if (isset($_SESSION['login'])) {
             left: 30%;
         }
     </style>
+<div>
 <form method="get">
     <input name="login" type="text" placeholder="Логин" required="true" />
     <br /><input name="password" type="password" placeholder="Пароль" required="true" />
@@ -29,6 +30,7 @@ if (isset($_SESSION['login'])) {
     <input name="send" type="hidden" value="true"/>
     <br /><input type="submit" />
 </form>
+</div>
 <?php
     if (isset($_REQUEST['send'])) {
         $login = $_REQUEST['login'];

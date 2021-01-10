@@ -18,6 +18,11 @@ if (isset($_REQUEST['id'])) {
         $title = $auction[0]['title'];
         echo "<h2>$title</h2>";
 ?>
+<style>
+    table {
+        border-spacing: 20px 5px;
+    }
+</style>
 <table>
     <tr>
         <th>№ заявки</th><th>Ставка</th><th>Пользователь</th><th>Дата</th>
@@ -27,7 +32,7 @@ if (isset($_REQUEST['id'])) {
             $betId = $bet['id'];
             $price = (int) $bet['price'];
             $maxPrice = max($price, $maxPrice);
-            $time = (int) $bet['time'];
+            $time = $bet['time'];
             $user = $bet['user'];
 
 ?>

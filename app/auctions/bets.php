@@ -64,6 +64,7 @@ if (isset($_REQUEST['id'])) {
                     $sql = "insert into bets (auction, price, user) values ($id, $newPrice, '$login')";
                     $addBet = $connection->query($sql);
                     p($addBet ? "Принято" : "Ошибка");
+                    go("");
                 }
             }
         }

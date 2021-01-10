@@ -34,7 +34,7 @@ if (!isset($_SESSION['login'])) {
         <p>Логин: <b><?= $_SESSION['login'] ?></b></p>
         <p>Имя: <?= $name ?> <a href="#change-name">Изменить</a></p>
         <div id="change-name" class="change-data">
-            <form method="get">
+            <form method="post">
                 <input type="text" name="new-name" required placeholder="Новое имя" />
                 <input type="submit" value="Сохранить">
             </form>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['login'])) {
         </div>
         <p>E-mail: <?= $email ?> <a href="#change-email">Изменить</a></p>
         <div id="change-email" class="change-data">
-            <form method="get">
+            <form method="post">
                 <input type="email" name="new-email" required placeholder="Новая почта" />
                 <input type="submit" value="Сохранить">
             </form>

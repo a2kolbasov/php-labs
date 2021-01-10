@@ -9,7 +9,7 @@ if (!isset($_SESSION['login'])) {
     go("/");
 } else { ?>
     <div>
-        <form method="get">
+        <form method="post">
             Новый пароль: <input type="password" name="new-pass" required placeholder="Новый пароль"/>
             <br/><input type="submit" value="Отправить"/>
             <br/><button onclick="history.back()">Назад</button>

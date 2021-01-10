@@ -21,7 +21,7 @@ if (isset($_SESSION['login'])) {
         }
     </style>
 <div>
-<form method="get">
+<form method="post">
     <input name="login" type="text" placeholder="Логин" required="true" />
     <br /><input name="password" type="password" placeholder="Пароль" required="true" />
     <br /><input name="email" type="email" placeholder="e-mail" required="true" />

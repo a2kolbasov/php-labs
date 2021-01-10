@@ -21,7 +21,7 @@ if (isset($_SESSION['login'])) {
         }
     </style>
 <div>
-<form method="get">
+<form method="post">
     <input name="login" type="text" placeholder="Логин" required="true" value="<?= $_COOKIE['last_login'] ?>" />
     <br /><input name="password" type="password" placeholder="Пароль" required="true" />
     <input name="send" type="hidden" value="true"/>

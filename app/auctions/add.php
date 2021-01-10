@@ -21,7 +21,7 @@ if ($_SESSION['priveleges'] !== 'admin') {
 </style>
 
 <div>
-<form method="get">
+<form method="post">
     <table><tr>
         <td>Название: </td>
         <td><input name="title" type="text" placeholder="Название лота" required="true" /></td>

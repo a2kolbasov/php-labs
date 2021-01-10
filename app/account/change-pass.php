@@ -12,7 +12,7 @@ if (!isset($_SESSION['login'])) {
         <form method="post">
             Новый пароль: <input type="password" name="new-pass" required placeholder="Новый пароль"/>
             <br/><input type="submit" value="Отправить"/>
-            <br/><button onclick="history.back()">Назад</button>
+            <br/><a href=".">Назад</a>
         </form>
         <?php
         if (isset($_REQUEST['new-pass'])) {

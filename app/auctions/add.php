@@ -31,7 +31,7 @@ if ($_SESSION['priveleges'] !== 'admin') {
     </tr></table>
     <input name="send" type="hidden" value="true"/>
     <input type="submit" />
-    <br /><button onclick="history.back()">Назад</button>
+    <br /><a href=".">Назад</a>
 </form>
 </div>
 <?php

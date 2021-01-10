@@ -9,18 +9,9 @@ if (!isset($title)) $title = "Аукцион";
 <head>
     <meta charset="UTF-8">
     <title><?=$title?></title>
+    <link type="text/css" rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <style type="text/css">
-        .header {
-            position: fixed;
-            top: 5px;
-            right: 5px;
-        }
-        table {
-            border-spacing: 20px 5px;
-        }
-    </style>
     <div class="header">
         <a href="/">На главную</a>
         <a href="/auctions">Аукционы</a>

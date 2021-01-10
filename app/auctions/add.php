@@ -9,18 +9,8 @@ if ($_SESSION['priveleges'] !== 'admin') {
     p("Недостаточно прав");
 } else {
 ?>
-<h1 style="text-align: center;">Создать лот</h1>
-<style type="text/css">
-        input {
-            width: 400px;
-        }
-        form {
-            position: relative;
-            left: 30%;
-        }
-</style>
-
-<div>
+<h1 class="center">Создать лот</h1>
+<div class="center">
 <form method="post">
     <table><tr>
         <td>Название: </td>
@@ -30,7 +20,7 @@ if ($_SESSION['priveleges'] !== 'admin') {
         <td><input name="endTime" type="date" placeholder="Время окончания" required /></td>
     </tr></table>
     <input name="send" type="hidden" value="true"/>
-    <input type="submit" />
+    <input type="submit" style="width: 100%;"/>
     <br /><a href=".">Назад</a>
 </form>
 </div>

@@ -8,12 +8,14 @@ require_once "../html.php";
 if (!isset($_SESSION['login'])) {
     go("/");
 } else { ?>
-    <div>
+    <p>Новый пароль:</p>
+    <div class="center">
         <form method="post">
-            Новый пароль: <input type="password" name="new-pass" required placeholder="Новый пароль"/>
+            <input type="password" name="new-pass" required placeholder="Новый пароль"/>
             <br/><input type="submit" value="Отправить"/>
             <br/><a href=".">Назад</a>
         </form>
+    </div>
         <?php
         if (isset($_REQUEST['new-pass'])) {
             $connection = Connection::connect();
@@ -23,6 +25,4 @@ if (!isset($_SESSION['login'])) {
             $isChanged = $connection->query($sql);
             p($isChanged ? "Пароль изменён" : "Ошибка");
         }
-        ?>
-    </div>
-<?php }
+    }

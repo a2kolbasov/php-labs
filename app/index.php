@@ -3,4 +3,4 @@
 <?php
 require_once "html.php";
 ?>
-<h1 style="text-align: center;">Мини аукцион</h1>
+<h1 class="center">Мини аукцион</h1>

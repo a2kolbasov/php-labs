@@ -10,17 +10,8 @@ if (isset($_SESSION['login'])) {
     go("/");
 } else {
 ?>
-<h1 style="text-align: center;">Войти</h1>
-<style type="text/css">
-        input {
-            width: 400px;
-        }
-        form {
-            position: relative;
-            left: 30%;
-        }
-    </style>
-<div>
+<h1 class="center">Войти</h1>
+<div class="center">
 <form method="post">
     <input name="login" type="text" placeholder="Логин" required value="<?= $_COOKIE['last_login'] ?>" />
     <br /><input name="password" type="password" placeholder="Пароль" required />

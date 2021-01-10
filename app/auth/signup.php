@@ -10,17 +10,8 @@ if (isset($_SESSION['login'])) {
     go("/");
 } else {
 ?>
-<h1 style="text-align: center;">Регистрация</h1>
-<style type="text/css">
-        input {
-            width: 400px;
-        }
-        form {
-            position: relative;
-            left: 30%;
-        }
-    </style>
-<div>
+<h1 class="center">Регистрация</h1>
+<div class="center">
 <form method="post">
     <input name="login" type="text" placeholder="Логин" required />
     <br /><input name="password" type="password" placeholder="Пароль" required />
@@ -41,6 +32,6 @@ if (isset($_SESSION['login'])) {
         $sql = "insert into users (login, password, pw_hash, name, email, priveleges) values
         ('$login', '$password', 'bcrypt', '$name', '$email', 'user')";
         $isAdded = $db->query($sql);
-        p("<p>".($isAdded ? "Успешно" : "Ошибка: логин уже занят")."</p>");
+        p($isAdded ? "Успешно" : "Ошибка: логин уже занят");
     }
 }

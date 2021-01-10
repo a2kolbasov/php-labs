@@ -1,0 +1,30 @@
+/* Copyright © 2020 Aleksandr Kolbasov */
+
+.header {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+}
+.header > a {
+    margin-right: 5px;
+}
+table {
+    border-spacing: 20px 5px;
+}
+.center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+p, h1, h2 {
+    text-align: center;
+}
+input {
+    width: 200px;
+}
+.change-data {
+    display: none;
+}
+.change-data:target {
+    display: block;
+}

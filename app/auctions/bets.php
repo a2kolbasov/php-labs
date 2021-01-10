@@ -23,7 +23,8 @@ if (isset($_REQUEST['id'])) {
         echo "<h2>$title</h2>";
         p("Время окончания аукциона: <b>$endTime (UTC)</b>");
 ?>
-<table>
+<a href="" class="center">Обновить</a>
+<table class="center">
     <tr>
         <th>№ заявки</th><th>Ставка</th><th>Пользователь</th><th>Время (UTC)</th>
     </tr>
@@ -49,13 +50,13 @@ if (isset($_REQUEST['id'])) {
             $login = $_SESSION['login'];
             ?>
             <p>Сделать ставку:</p>
+            <div class="center">
             <form method="post">
-                <!-- <input type="hidden" name="id" value="<?=$id?>"/> -->
                 <input type="number" name="newPrice" placeholder="Цена"/>
                 <input type="hidden" name="newBet" value="true"/>
-                <input type="submit" value="Отправить"/>
-                <a href="">Обновить</a>
+                <br/><input type="submit" value="Отправить"/>
             </form>
+            </div>
             <?php
             if (isset($_REQUEST['newBet'])) {
                 $newPrice = (int) $_REQUEST['newPrice'];
@@ -63,8 +64,8 @@ if (isset($_REQUEST['id'])) {
                     p("Ставка ниже текущей максимальной");
                 } else {
                     $sql = "insert into bets (auction, price, user) values ($id, $newPrice, '$login')";
-                    $addBet = $connection->query($sql);
-                    p($addBet ? "Принято" : "Ошибка");
+                    $isBetAdded = $connection->query($sql);
+                    p($isBetAdded ? "Принято" : "Ошибка");
                     go("");
                 }
             }

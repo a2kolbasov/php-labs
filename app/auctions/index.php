@@ -10,11 +10,6 @@ $sql = "select * from auctions";
 $auctions = $connection->query($sql);
 ?>
 <a href="add.php" style="display:<?=$_SESSION['priveleges'] === 'admin' ? 'unset' : 'none'?>">Добавить</a>
-<style>
-    table {
-        border-spacing: 20px 5px;
-    }
-</style>
 <table>
     <tr>
         <th>№</th><th>Название</th><th>Дата начала</th><th>Дата окончания</th>

@@ -22,11 +22,6 @@ if (isset($_REQUEST['id'])) {
         echo "<h2>$title</h2>";
         p("Время окончания аукциона: <b>$endTime</b>");
 ?>
-<style>
-    table {
-        border-spacing: 20px 5px;
-    }
-</style>
 <table>
     <tr>
         <th>№ заявки</th><th>Ставка</th><th>Пользователь</th><th>Дата</th>
@@ -63,10 +58,10 @@ if (isset($_REQUEST['id'])) {
             <?php
             if (isset($_REQUEST['newBet'])) {
                 $newPrice = (int) $_REQUEST['newPrice'];
-                if ($newPrice <= $maxPrice) p("Ставка ниже текущей максимальной");
-                else {
+                if ($newPrice <= $maxPrice) {
+                    p("Ставка ниже текущей максимальной");
+                } else {
                     $sql = "insert into bets (auction, price, user) values ($id, $newPrice, '$login')";
-                    p($sql);
                     $addBet = $connection->query($sql);
                     p($addBet ? "Принято" : "Ошибка");
                 }

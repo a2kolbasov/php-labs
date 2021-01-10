@@ -42,14 +42,7 @@ if (!isset($_SESSION['login'])) {
             if (isset($_REQUEST['new-name'])) {
                 $new_name = $_REQUEST['new-name'];
                 $sql = "update users set name='$new_name' where login = '$login'";
-                p("sql: ".$sql);
                 $response = $connection->query($sql);
-                p($response);
-                /*if (!$response) {
-                    ?>
-                    <script>alert("Ошибка");</script>
-                    <?php
-                }*/
             }
             ?>
         </div>
@@ -63,14 +56,7 @@ if (!isset($_SESSION['login'])) {
             if (isset($_REQUEST['new-email'])) {
                 $new_email = $_REQUEST['new-email'];
                 $sql = "update users set email='$new_email' where login = '$login'";
-                p("sql: ".$sql);
                 $response = $connection->query($sql);
-                p($response);
-                /*if (!$response) {
-                    ?>
-                    <script>alert("Ошибка");</script>
-                    <?php
-                }*/
             }
             ?>
         </div>

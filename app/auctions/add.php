@@ -40,7 +40,6 @@ if ($_SESSION['priveleges'] !== 'admin') {
         $endTime = $_REQUEST['endTime'];
         $connection = Connection::connect();
         $sql = "insert into auctions (title, isVisible, endTime) values ('$title', true, '$endTime')";
-        p($sql);
         $query = $connection->query($sql);
         p($query ? "Создан" : "Ошибка");
     }

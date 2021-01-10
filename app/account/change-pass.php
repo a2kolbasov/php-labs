@@ -20,7 +20,6 @@ if (!isset($_SESSION['login'])) {
             $login = $_SESSION['login'];
             $password = password_hash($_REQUEST['new-pass'], PASSWORD_BCRYPT);
             $sql = "update users set password = '$password', pw_hash = 'bcrypt' where login = '$login'";
-            p($sql);
             $isChanged = $connection->query($sql);
             p($isChanged ? "Пароль изменён" : "Ошибка");
         }

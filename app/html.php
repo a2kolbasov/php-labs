@@ -17,6 +17,9 @@ if (!isset($title)) $title = "Аукцион";
             top: 5px;
             right: 5px;
         }
+        table {
+            border-spacing: 20px 5px;
+        }
     </style>
     <div class="header">
         <a href="/">На главную</a>

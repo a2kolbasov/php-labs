@@ -19,7 +19,6 @@ class Connection {
     }
 
     public function query(string $sql) {
-        // str_replace("'", "\\'", $sql);
         $query = mysqli_query($this->connection, $sql);
 
         if (is_bool($query)) return $query;

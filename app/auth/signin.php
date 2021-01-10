@@ -5,7 +5,11 @@ require_once "../connection.php";
 require_once "../html.php";
 require_once "../utils.php";
 
-if (!isset($_SESSION['login'])) { ?>
+if (isset($_SESSION['login'])) {
+    p("Вы уже вошли");
+    go("/");
+} else {
+?>
 <h1 style="text-align: center;">Войти</h1>
 <style type="text/css">
         input {
@@ -31,9 +35,6 @@ if (!isset($_SESSION['login'])) { ?>
         $sql = "select password, priveleges from users where login = '$login'";
         $query = Connection::connect()->query($sql);
         $dbPassword = $query ? $query[0]['password'] : null;
-        p($dbPassword);
-        p($password);
-        p(password_verify($password, $dbPassword) ? "t" : "f");
         if (!$query) {
             p("Неверный логин");
         } else if (!password_verify($password, $dbPassword)) {
@@ -46,7 +47,4 @@ if (!isset($_SESSION['login'])) { ?>
             go("/");
         }
     }
-} else {
-    p("Вы уже вошли");
-    go("/");
 }

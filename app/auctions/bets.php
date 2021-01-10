@@ -16,22 +16,23 @@ if (isset($_REQUEST['id'])) {
     else {
         $maxPrice = 0;
         $title = $auction[0]['title'];
-        $endTime = $connection->query("select endTime from auctions where id=$id")[0]["endTime"];
-        $endTimestamp = date_timestamp_get(new DateTime($endTime));
+        $endTimeFromDB = $connection->query("select endTime from auctions where id=$id")[0]["endTime"];
+        $endTimestamp = Time::getTimestamp($endTimeFromDB);
+        $endTime = date(Time::fullTimeFormat, $endTimestamp);
         $nowTimestamp = time();
         echo "<h2>$title</h2>";
-        p("Время окончания аукциона: <b>$endTime</b>");
+        p("Время окончания аукциона: <b>$endTime (UTC)</b>");
 ?>
 <table>
     <tr>
-        <th>№ заявки</th><th>Ставка</th><th>Пользователь</th><th>Дата</th>
+        <th>№ заявки</th><th>Ставка</th><th>Пользователь</th><th>Время (UTC)</th>
     </tr>
 <?php
         foreach ($bets as $bet) {
             $betId = $bet['id'];
             $price = (int) $bet['price'];
             $maxPrice = max($price, $maxPrice);
-            $time = $bet['time'];
+            $time = Time::format( $bet['time'], Time::fullTimeFormat);
             $user = $bet['user'];
 
 ?>

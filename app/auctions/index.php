@@ -19,8 +19,8 @@ foreach ($auctions as $auction) {
     $id = $auction['id'];
     $title = $auction['title'];
     $isVisible = $auction['isVisible'] == 1;
-    $startTime = $auction['startTime'];
-    $endTime = $auction['endTime'];
+    $startTime = Time::format($auction['startTime'], Time::timeFormat);
+    $endTime = Time::format($auction['endTime'], Time::timeFormat);
 
     if (!$isVisible) continue;
 ?>

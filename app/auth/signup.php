@@ -22,10 +22,10 @@ if (isset($_SESSION['login'])) {
     </style>
 <div>
 <form method="post">
-    <input name="login" type="text" placeholder="Логин" required="true" />
-    <br /><input name="password" type="password" placeholder="Пароль" required="true" />
-    <br /><input name="email" type="email" placeholder="e-mail" required="true" />
-    <br /><input name="name" type="text" placeholder="ФИО" required="true" />
+    <input name="login" type="text" placeholder="Логин" required />
+    <br /><input name="password" type="password" placeholder="Пароль" required />
+    <br /><input name="email" type="email" placeholder="e-mail" required />
+    <br /><input name="name" type="text" placeholder="ФИО" required />
     <input name="send" type="hidden" value="true"/>
     <br /><input type="submit" />
 </form>

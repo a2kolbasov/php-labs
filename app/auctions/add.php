@@ -24,10 +24,10 @@ if ($_SESSION['priveleges'] !== 'admin') {
 <form method="post">
     <table><tr>
         <td>Название: </td>
-        <td><input name="title" type="text" placeholder="Название лота" required="true" /></td>
+        <td><input name="title" type="text" placeholder="Название лота" required /></td>
     </tr><tr>
         <td>Дата окончания: </td>
-        <td><input name="endTime" type="date" placeholder="Время окончания" required="true" /></td>
+        <td><input name="endTime" type="date" placeholder="Время окончания" required /></td>
     </tr></table>
     <input name="send" type="hidden" value="true"/>
     <input type="submit" />

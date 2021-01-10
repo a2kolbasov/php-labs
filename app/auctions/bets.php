@@ -16,7 +16,11 @@ if (isset($_REQUEST['id'])) {
     else {
         $maxPrice = 0;
         $title = $auction[0]['title'];
+        $endTime = $connection->query("select endTime from auctions where id=$id")[0]["endTime"];
+        $endTimestamp = date_timestamp_get(new DateTime($endTime));
+        $nowTimestamp = time();
         echo "<h2>$title</h2>";
+        p("Время окончания аукциона: <b>$endTime</b>");
 ?>
 <style>
     table {

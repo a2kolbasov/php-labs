@@ -49,7 +49,7 @@ if (isset($_REQUEST['id'])) {
 </table>
 <?php
     p("Текущая максимальная ставка: $maxPrice");
-        if($_SESSION['login']) {
+        if($_SESSION['login'] && $nowTimestamp < $endTimestamp) {
             $login = $_SESSION['login'];
             ?>
             <p>Сделать ставку:</p>

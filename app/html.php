@@ -1,6 +1,7 @@
 <!-- Copyright © 2020 Aleksandr Kolbasov -->
 
 <?php
+session_start();
 if (!isset($title)) $title = "Аукцион";
 ?>
 <!DOCTYPE html>

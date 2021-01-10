@@ -2,9 +2,8 @@
 
 <?php
 require_once "../connection.php";
-session_start();
-include "../html.php";
-include "../utils.php";
+require_once "../html.php";
+require_once "../utils.php";
 
 if (!isset($_SESSION['login'])) { ?>
 <h1 style="text-align: center;">Войти</h1>

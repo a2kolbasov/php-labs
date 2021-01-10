@@ -1,7 +1,7 @@
 <!-- Copyright © 2020 Aleksandr Kolbasov -->
 
 <?php
-require "../utils.php";
+require_once "../utils.php";
 session_start();
 p($_SESSION['login']);
 p("Выход...");

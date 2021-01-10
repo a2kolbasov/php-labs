@@ -2,9 +2,8 @@
 
 <?php
 require_once "../connection.php";
-require "../utils.php";
-session_start();
-include "../html.php";
+require_once "../utils.php";
+require_once "../html.php";
 
 if (isset($_REQUEST['id'])) {
     $id = (int) $_REQUEST['id'];

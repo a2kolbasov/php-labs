@@ -7,6 +7,7 @@ class Connection {
 
     public function __construct(string $host, string $user, string $password, string $database) {
         $this->connection = mysqli_connect($host, $user, $password, $database);
+        if ($this->connection === false) throw new Error("Ошибка при подключении к БД");
         $this->connection->set_charset("utf8");
     }
 

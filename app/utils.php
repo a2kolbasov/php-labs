@@ -9,8 +9,8 @@ function go($link) {
 }
 
 class Time {
-    public const timeFormat = "d.m.Y";
-    public const fullTimeFormat = "d.m.Y H:i";
+    const timeFormat = "d.m.Y";
+    const fullTimeFormat = "d.m.Y H:i";
 
     public static function getTimestamp(string $timestampFromDB) : int {
         return date_timestamp_get(new DateTime($timestampFromDB));

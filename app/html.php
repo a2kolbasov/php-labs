@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-if (!isset($title)) $title = "Аукцион";
+if (!isset($title)) $title = "Площадка для аукционов";
 ?>
 <!DOCTYPE html>
 <html lang="ru">

@@ -10,6 +10,7 @@ function go($link) {
 
 class Time {
     const timeFormat = "d.m.Y";
+    const isoTimeFormat = "Y-m-d";
     const fullTimeFormat = "d.m.Y H:i";
 
     public static function getTimestamp(string $timestampFromDB) : int {

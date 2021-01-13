@@ -17,7 +17,7 @@ if ($_SESSION['priveleges'] !== 'admin') {
         <td><input name="title" type="text" placeholder="Название лота" required /></td>
     </tr><tr>
         <td>Дата окончания: </td>
-        <td><input name="endTime" type="date" placeholder="Время окончания" required /></td>
+        <td><input name="endTime" type="date" placeholder="Время окончания" min="<?= date(Time::isoTimeFormat, time()) ?>" required /></td>
     </tr></table>
     <input name="send" type="hidden" value="true"/>
     <input type="submit" style="width: 100%;"/>

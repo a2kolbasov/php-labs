@@ -14,12 +14,12 @@ if (!isset($title)) $title = "Площадка для аукционов";
 <body>
     <div class="header">
         <a href="/">На главную</a>
-        <a href="/auctions">Аукционы</a>
+        <a href="/auctions/">Аукционы</a>
         <?php if (!isset($_SESSION['login'])) { ?>
         <a href="/auth/signin.php">Войти</a>
         <a href="/auth/signup.php">Регистрация</a>
         <?php } else { ?>
-        <a href="/account">Настройки аккаунта</a>
+        <a href="/account/">Настройки аккаунта</a>
         <a href="/auth/signout.php">Выйти</a>
         <?php } ?>
     </div>

@@ -18,7 +18,7 @@ if (isset($_SESSION['login'])) {
     <br /><input name="email" type="email" placeholder="e-mail" required />
     <br /><input name="name" type="text" placeholder="ФИО" required />
     <input name="send" type="hidden" value="true"/>
-    <br /><input type="submit" />
+    <br /><input type="submit" value="Зарегистрироваться"/>
 </form>
 </div>
 <?php

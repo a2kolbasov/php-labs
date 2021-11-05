@@ -16,7 +16,7 @@ if (isset($_SESSION['login'])) {
     <input name="login" type="text" placeholder="Логин" required value="<?= $_COOKIE['last_login'] ?>" />
     <br /><input name="password" type="password" placeholder="Пароль" required />
     <input name="send" type="hidden" value="true"/>
-    <br /><input type="submit" />
+    <br /><input type="submit" value="Войти"/>
 </form>
 </div>
 <?php

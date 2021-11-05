@@ -20,7 +20,7 @@ if ($_SESSION['priveleges'] !== 'admin') {
         <td><input name="endTime" type="date" placeholder="Время окончания" min="<?= date(Time::isoTimeFormat, time()) ?>" required /></td>
     </tr></table>
     <input name="send" type="hidden" value="true"/>
-    <input type="submit" style="width: 100%;"/>
+    <input type="submit" value="Создать" style="width: 100%;"/>
     <br /><a href=".">Назад</a>
 </form>
 </div>

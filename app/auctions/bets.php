@@ -38,14 +38,14 @@ if (isset($_REQUEST['id'])) {
 
 ?>
     <tr>
-        <td><?=$betId?></td><td><?=$price?></td><td><?=$user?></td><td><?=$time?></td>
+        <td><?=$betId?></td><td><?=$price?> ¤</td><td><?=$user?></td><td><?=$time?></td>
     </tr>
 <?php
         }
 ?>
 </table>
 <?php
-    p("Текущая максимальная ставка: $maxPrice");
+    p("Текущая максимальная ставка: $maxPrice ¤");
         if($_SESSION['login'] && $nowTimestamp < $endTimestamp) {
             $login = $_SESSION['login'];
             ?>
